@@ -1,9 +1,10 @@
 BaseURL = "https://yokaze.github.io/"
 languageCode = "ja"
 title = "yokaze.github.io"
-publishDir = "yokaze.github.io"
+copyright = "&copy; Rue Yokaze"
 hascjklanguage = true
 googleAnalytics = "UA-83271338-1"
+publishDir = "yokaze.github.io"
 
 [[menu.main]]
   name = "About"
