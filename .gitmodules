@@ -1,0 +1,3 @@
+[submodule "yokaze.github.io"]
+	path = yokaze.github.io
+	url = https://github.com/yokaze/yokaze.github.io.git
