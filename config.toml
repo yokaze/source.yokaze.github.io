@@ -5,11 +5,12 @@ copyright = "&copy; Rue Yokaze"
 hascjklanguage = true
 googleAnalytics = "UA-83271338-1"
 publishDir = "yokaze.github.io"
+disableSitemap = true
 
 [[menu.main]]
   name = "About"
   url = "/about/"
 
-  [[menu.main]]
-    name = "Software"
-    url = "/software/"
+[[menu.main]]
+  name = "Software"
+  url = "/software/"
