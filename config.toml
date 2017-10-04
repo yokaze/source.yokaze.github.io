@@ -1,6 +1,6 @@
 BaseURL = "https://yokaze.github.io/"
 copyright = "&copy; Rue Yokaze"
-disableSitemap = true
+disableKinds = ["sitemap"]
 googleAnalytics = "UA-83271338-1"
 hascjklanguage = true
 languageCode = "ja"
