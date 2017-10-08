@@ -253,9 +253,7 @@ article.li.sm>header {
 }
 
 .article-body em {
-  font-style: normal;
-  font-weight: 700;
-  color: #428bca;
+  font-style: italic;
 }
 
 .article-body figure { margin: 1.5rem 0; }
