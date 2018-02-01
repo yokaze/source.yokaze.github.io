@@ -15,3 +15,6 @@ title = "yokaze.github.io"
 [[menu.main]]
   name = "Software"
   url = "/software/"
+
+[taxonomies]
+  category = "categories"
