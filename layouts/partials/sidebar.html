@@ -1,6 +1,19 @@
 
 <aside class="l-sidebar">
 
+  {{ $related := .Site.RegularPages.Related . | first 10 }}
+  {{ with $related }}
+  <section class="panel panel-default">
+    <div class="panel-heading">
+      <div class="panel-title">RELATED POSTS</div>
+    </div>
+    <div class="list-group">
+      {{ range . }}
+      <a href="{{ .Permalink }}" class="list-group-item">{{ .Title }}</a>
+      {{ end }}
+    </div>
+  </section>
+  {{ else }}
   <section class="panel panel-default">
     <div class="panel-heading">
       <div class="panel-title">LATESTS</div>
@@ -11,6 +24,7 @@
       {{ end }}
     </div>
   </section>
+  {{ end }}
 
   {{ range $key, $value := .Site.Taxonomies }}
   <section class="panel panel-default">
