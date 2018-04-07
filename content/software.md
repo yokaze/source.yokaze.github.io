@@ -6,6 +6,12 @@ draft: false
 
 各種自作ソフトを公開します。鋭意作成中。
 
+## pyscience11
+https://github.com/yokaze/pyscience11
+
+C++ から NumPy, SciPy, Matplotlib にアクセスするためのライブラリです。
+pybind11 と組み合わせて使うことができます。
+
 ## python-multi-array
 https://github.com/yokaze/python-multi-array
 
