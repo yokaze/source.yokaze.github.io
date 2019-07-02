@@ -7,6 +7,9 @@ date: 2001-01-01T00:00:00+09:00
 
 都内でソフトウェアを開発しながら写真を撮っています。
 
+#### バイナリエディタ Sirius
+- https://github.com/yokaze/sirius
+
 #### SNS
 - https://twitter.com/chrofieyue
 - https://github.com/yokaze
@@ -16,6 +19,8 @@ date: 2001-01-01T00:00:00+09:00
 #### Equipment
 - FUJIFILM X-T2
  - Touit 12mm F2.8
+ - XF16mm F1.4
+ - XF23mm F1.4
  - XF35mm F1.4
  - XF56mm F1.2
  - XF80mm F2.8 Macro
