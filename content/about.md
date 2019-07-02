@@ -7,9 +7,6 @@ date: 2001-01-01T00:00:00+09:00
 
 都内でソフトウェアを開発しながら写真を撮っています。
 
-#### バイナリエディタ Sirius
-- https://github.com/yokaze/sirius
-
 #### SNS
 - https://twitter.com/chrofieyue
 - https://github.com/yokaze
