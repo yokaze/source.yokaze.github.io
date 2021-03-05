@@ -8,6 +8,11 @@ pluralizeListTitles = false
 publishDir = "yokaze.github.io"
 title = "yokaze.github.io"
 
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
 [[menu.main]]
   name = "About"
   url = "/about/"

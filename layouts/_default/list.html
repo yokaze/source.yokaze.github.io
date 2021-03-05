@@ -11,8 +11,14 @@
     {{ end }}
 
     <ul class="p-articles">
-      {{ range (.Paginate .Data.Pages).Pages }}
-      <li>{{ .Render "li" }}</li>
+      {{ if .IsHome }}
+        {{ range (.Paginate .Site.RegularPages).Pages }}
+        <li>{{ .Render "li" }}</li>
+        {{ end }}
+      {{ else }}
+        {{ range (.Paginate .Pages).Pages }}
+        <li>{{ .Render "li" }}</li>
+        {{ end }}
       {{ end }}
     </ul>
 
