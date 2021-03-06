@@ -4,6 +4,7 @@
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="{{ .Date.Format "2006-01-02T15:04:05JST" }}">{{ .Date.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</time></li>
       {{ with .Section }}<li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
       {{ if .Site.IsServer }}
+      <li>{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</li>
       <li>{{ .WordCount }} Words</li>
       {{ if .Draft }}<li style="color: #2196f3;">DRAFT</li>{{ end }}
       {{ end }}
