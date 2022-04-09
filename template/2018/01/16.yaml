@@ -1,0 +1,7 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang sample.cpp -Wshorten-64-to-32
+  - command: clang sample.cpp -Wshorten-64-to-32 -Wno-shorten-64-to-32
+resources:
+  - name: sample.cpp
+    source: 16.cpp
