@@ -35,8 +35,14 @@ type Info struct {
 }
 
 func generatePage(file string, info *Info) error {
-	fmt.Println(file)
+	fmt.Println("- " + file)
 	buf, err := os.ReadFile(file + ".yaml")
+	if err != nil {
+		return err
+	}
+
+	info.Recipe = Recipe{}
+	err = yaml.Unmarshal(buf, &info.Recipe)
 	if err != nil {
 		return err
 	}
@@ -47,7 +53,6 @@ func generatePage(file string, info *Info) error {
 	}
 	defer os.RemoveAll(tempDir)
 
-	yaml.Unmarshal(buf, &info.Recipe)
 	for _, res := range info.Recipe.Resources {
 		b, err := os.ReadFile(path.Join(path.Dir(file), res.Source))
 		if err != nil {
@@ -60,10 +65,14 @@ func generatePage(file string, info *Info) error {
 	}
 
 	for _, com := range info.Recipe.Commands {
+		fmt.Println(com.Command)
 		cmd := exec.Command("zsh", "-c", com.Command)
 		cmd.Dir = tempDir
 		output, _ := cmd.CombinedOutput()
-		com.Result = strings.TrimSpace(string(output))
+
+		result := strings.TrimSpace(string(output))
+		fmt.Println(result)
+		com.Result = result
 	}
 
 	dst, err := os.Create(path.Join("../content", file+".md"))

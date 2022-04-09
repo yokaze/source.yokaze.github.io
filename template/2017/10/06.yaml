@@ -1,0 +1,7 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang sample.cpp -Wunused-macros
+  - command: clang sample.cpp -Wunused-macros -Wno-unused-macros
+resources:
+  - name: sample.cpp
+    source: 06.cpp
