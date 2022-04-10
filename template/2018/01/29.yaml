@@ -1,0 +1,9 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang sample.cpp -o sample -Wshift-count-overflow
+  - command: ./sample
+  - command: clang sample.cpp
+  - command: clang sample.cpp -Wno-shift-count-overflow
+resources:
+  - name: sample.cpp
+    source: 29.cpp
