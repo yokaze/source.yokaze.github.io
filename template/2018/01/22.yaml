@@ -1,0 +1,8 @@
+commands:
+  - command: swiftc --version 2>&1 | awk '{ print $7 }'
+  - command: swiftc sample.swift
+  - command: ./sample
+  - command: swift sample.swift
+resources:
+  - name: sample.swift
+    source: 22.swift
