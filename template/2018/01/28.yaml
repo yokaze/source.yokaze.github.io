@@ -1,0 +1,10 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang sample1.cpp -std=c++17 -lc++ -o sample -Wrange-loop-analysis
+  - command: clang sample2.cpp -std=c++17 -lc++ -o sample -Wrange-loop-analysis
+  - command: clang sample1.cpp -std=c++17 -lc++ -o sample -Wno-range-loop-analysis
+resources:
+  - name: sample1.cpp
+    source: 28-1.cpp
+  - name: sample2.cpp
+    source: 28-2.cpp
