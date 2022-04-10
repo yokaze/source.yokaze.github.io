@@ -1,0 +1,10 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang sample.cpp -Wmacro-redefined
+  - command: clang sample.cpp
+  - command: clang sample.cpp -Wno-macro-redefined
+  - command: gcc-11 --version | head -n 1 | awk '{print $5}'
+  - command: gcc-11 sample.cpp
+resources:
+  - name: sample.cpp
+    source: 21.cpp
