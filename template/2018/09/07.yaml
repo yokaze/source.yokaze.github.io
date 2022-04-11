@@ -1,0 +1,7 @@
+commands:
+  - command: clang -v 2>&1 | head -n 1 | awk '{ printf $4 }'
+  - command: clang -Wunreachable-code-loop-increment sample.cpp
+  - command: clang -Wunreachable-code-loop-increment -Wno-unreachable-code-loop-increment sample.cpp
+resources:
+  - name: sample.cpp
+    source: 07.cpp
