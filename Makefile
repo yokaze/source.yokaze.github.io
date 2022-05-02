@@ -1,4 +1,4 @@
-HUGO_VERSION := 0.92.2
+HUGO_VERSION := 0.95.0
 
 .PHONY: blog
 blog:
@@ -25,3 +25,13 @@ date:
 		printf '  '; \
 		grep title: $$i | awk '{ print substr($$0, 8) }' | jq -r; \
 	done | sort | bat -
+
+.PHONY: update-nochange
+update-nochange:
+	@cd yokaze.github.io; git config --local core.quotepath false
+	@for i in $$(cd yokaze.github.io; git diff --numstat | grep -e '1\s1' | awk '{print $$3}'); do \
+		echo $$i; \
+		pushd yokaze.github.io > /dev/null; \
+		git add $$i; \
+		popd > /dev/null; \
+	done
