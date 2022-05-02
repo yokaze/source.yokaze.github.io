@@ -12,7 +12,7 @@
       <div class="list-group">
         {{ $data := .Data }}
         {{ range $key, $value := .Data.Terms }}
-        <a href="{{ $.Site.BaseURL }}{{ $data.Plural }}/{{ $key | urlize }}" class="list-group-item">{{ $key }} <span class="badge">{{ len $value }}</span></a>
+        <a href="{{ "/" | absLangURL }}{{ $data.Plural }}/{{ $key | urlize }}" class="list-group-item">{{ $key }} <span class="badge">{{ len $value }}</span></a>
         {{ end }}
       </div>
     </section>
