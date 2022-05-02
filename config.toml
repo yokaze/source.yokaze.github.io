@@ -1,5 +1,6 @@
 BaseURL = "https://yokaze.github.io/"
 copyright = "&copy; Rue Yokaze"
+defaultContentLanguage = "ja"
 disableKinds = ["sitemap"]
 googleAnalytics = "UA-83271338-1"
 hascjklanguage = true
@@ -20,6 +21,18 @@ title = "yokaze.github.io"
 [[menu.main]]
   name = "Software"
   url = "/software/"
+
+[params]
+  author_name = "夜風"
+
+[languages]
+  [languages.ja]
+    weight = 1
+    languageName = "ja"
+  [languages.en]
+    weight = 2
+    languageName = "en"
+    author_name = "Rue Yokaze"
 
 [taxonomies]
   category = "categories"

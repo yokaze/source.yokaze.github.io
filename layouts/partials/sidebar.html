@@ -33,7 +33,7 @@
     </div>
     <div class="list-group">
       {{ range first 10 $value.ByCount }}
-      <a href="{{ $.Site.BaseURL}}{{ $key }}/{{ .Name | urlize }}" class="list-group-item">{{ .Name }}</a>
+      <a href="{{ "/" | absLangURL }}{{ $key }}/{{ .Name | urlize }}" class="list-group-item">{{ humanize .Name }}</a>
       {{ end }}
     </div>
   </section>
@@ -44,7 +44,7 @@
       <div class="panel-title">AUTHOR</div>
     </div>
     <div class="list-group">
-      <a href="https://twitter.com/chrofieyue" class="list-group-item">夜風&ensp;<font color="#00acee" /><i class="fa fa-twitter" aria-hidden="true"></i></font></a>
+      <a href="https://twitter.com/chrofieyue" class="list-group-item">{{ .Param "author_name" }}&ensp;<font color="#00acee" /><i class="fa fa-twitter" aria-hidden="true"></i></font></a>
     </div>
   </section>
 

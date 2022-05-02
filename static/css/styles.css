@@ -10,7 +10,7 @@ html {
 
 body {
   font-size: inherit;
-  font-weight: 300;
+  font-weight: default;
 }
 
 p {
@@ -54,6 +54,7 @@ main {
 /* Layouts */
 .l-header {
   font-size: .9rem;
+  font-weight: 300;
 }
 
 .l-footer {
@@ -76,6 +77,7 @@ main {
 
 /* Parts:facts */
 .p-facts {
+  font-weight: 300;
   list-style: none;
   margin-bottom: .5rem;
 }
@@ -125,7 +127,7 @@ section {
 
 section>header {
   margin-bottom: .5rem;
-  font-weight: 500;
+  font-weight: default;
 }
 
 section.bordered {

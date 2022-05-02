@@ -2,13 +2,15 @@
   <header>
     <ul class="p-facts">
       <li><i class="fa fa-calendar" aria-hidden="true"></i><time datetime="{{ .Lastmod.Format "2006-01-02T15:04:05JST" }}">{{ .Lastmod.Format ( .Site.Params.dateformat | default "Jan 2, 2006") }}</time></li>
-      {{ with .Section }}<li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="{{ $.Site.BaseURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+      {{ with .Section }}<li><i class="fa fa-bookmark" aria-hidden="true"></i><a href="{{ "/" | absLangURL }}{{ . | urlize }}/">{{ . }}</a></li>{{ end }}
+      {{ if .IsTranslated }}
+        <li><i class="fa fa-globe" aria-hidden="true"></i>{{ range $i, $v := .AllTranslations }}{{ if $i }} | {{ end }}<a href="{{ .Permalink }}">{{ .Language.LanguageName | upper }}</a>{{ end }}</li>
+      {{ end }}
       {{ if .Site.IsServer }}
       <li>{{ .WordCount }} Words</li>
       {{ if .Draft }}<li style="color: #2196f3;">DRAFT</li>{{ end }}
       {{ end }}
     </ul>
-
     <h1 class="title">{{ .Title }}</h1>
   </header>
 
@@ -29,7 +31,7 @@
       <div>
         <ul class="p-terms">
           {{ range (index $params $key) }}
-          <li><a href="{{ $.Site.BaseURL }}{{ $key | urlize }}/{{ . | urlize }}/">{{ . }}</a></li>
+          <li><a href="{{ "/" | absLangURL }}{{ $key | urlize }}/{{ . | urlize }}/">{{ . }}</a></li>
           {{ end }}
         </ul>
       </div>

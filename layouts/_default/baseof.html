@@ -29,7 +29,7 @@
               <span class="icon-bar"></span>
               <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand" href="{{ .Site.BaseURL }}">{{ .Site.Title }}</a>
+            <a class="navbar-brand" href="{{ .Site.Home.Permalink }}">{{ .Site.Title }}</a>
           </div>
 
           {{ if ne (len .Site.Menus) 0 }}
@@ -67,7 +67,7 @@
 
     <footer class="l-footer">
       <div class="container">
-        <p>&copy; <a href="{{ $.Site.BaseURL}}/about/">Rue Yokaze</a> <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;<i class="fa fa-github-alt" aria-hidden="true"></i></p>
+        <p>&copy; <a href="{{ $.Site.BaseURL }}about/">Rue Yokaze</a> <i class="fa fa-twitter" aria-hidden="true"></i>&nbsp;<i class="fa fa-github-alt" aria-hidden="true"></i></p>
         <aside>
           <p>Powered by <a href="https://gohugo.io/">Hugo</a>.</p>
           <p><a href="https://github.com/dim0627/hugo_theme_beg">Beg</a> designed by <a href="http://yet.unresolved.xyz/">Daisuke Tsuji</a>.</p>
