@@ -1,0 +1,11 @@
+commands:
+  - command: brew uninstall pybind11
+  - command: python3 -m pip uninstall --yes pybind11
+  - command: HOMEBREW_NO_INSTALL_CLEANUP=1 brew install pybind11 | sed 's/yokaze/username/g'
+  - command: brew info pybind11 --json | jq -r '.[0].installed[0].version'
+  - command: brew uninstall pybind11
+  - command: python3 -m pip install pybind11 2>&1 | sed 's/yokaze/username/g'
+  - command: python3 -m pip show pybind11 | grep Version | awk '{ print $2 }'
+  - command: python3 -m pip show pybind11 | grep Location | awk '{ print $2 }' | sed 's/yokaze/username/g'
+  - command: python3 -m pip uninstall --yes pybind11
+  - command: python3 --version
