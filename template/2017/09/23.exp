@@ -1,0 +1,5 @@
+spawn /usr/bin/python3
+expect ">>>"
+send "import PIL\n"
+expect ">>>"
+exit

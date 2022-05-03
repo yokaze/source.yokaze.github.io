@@ -1,0 +1,11 @@
+commands:
+  - command: /usr/bin/python3 -m pip install --upgrade pip | sed -e 's/yokaze/username/g'
+  - command: /usr/bin/python3 -m pip uninstall --yes pillow
+  - command: expect -f 23.exp | grep -v spawn
+  - command: /usr/bin/python3 -m pip install pillow
+  - command: expect -f 23.exp | grep -v spawn
+  - command: /usr/bin/python3 --version
+  - command: /usr/bin/python3 -m pip --version | awk '{ print $1, $2 }'
+resources:
+  - name: 23.exp
+    source: 23.exp
