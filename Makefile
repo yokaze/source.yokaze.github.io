@@ -1,8 +1,11 @@
 HUGO_VERSION := 0.95.0
 
+.PHONY: template
+template:
+	cd template; make template
+
 .PHONY: blog
 blog:
-	cd template; make template
 	docker run --rm -it -v $(shell pwd):/src klakegg/hugo:$(HUGO_VERSION)
 	for i in $$(find yokaze.github.io -name '*.html'); do \
 		js-beautify --replace --no-preserve-newlines --end-with-newline $$i; \

@@ -54,11 +54,9 @@ func generatePage(file string, info *Info) error {
 	defer os.RemoveAll(tempDir)
 
 	for _, res := range info.Recipe.Resources {
-		b, err := os.ReadFile(path.Join(path.Dir(file), res.Source))
-		if err != nil {
-			return err
-		}
-		err = os.WriteFile(path.Join(tempDir, res.Name), b, 0644)
+		src := path.Join(path.Dir(file), res.Source)
+		dst := path.Join(tempDir, res.Name)
+		err := exec.Command("zsh", "-c", fmt.Sprintf("cp %s %s", src, dst)).Run()
 		if err != nil {
 			return err
 		}
@@ -101,6 +99,10 @@ func main() {
 	files, err := filepath.Glob("./*/*/*.md")
 	if err != nil {
 		panic(err)
+	}
+
+	if len(os.Args) == 2 {
+		files = []string{os.Args[1] + ".md"}
 	}
 
 	for _, file := range files {

@@ -1,0 +1,11 @@
+commands:
+  - command: python3 --version
+  - command: brew info pybind11 --json | jq -r '.[0].installed[0].version'
+  - command: ./sample.sh
+  - command: $(./sample.sh)
+  - command: ./sample
+resources:
+  - name: sample.cpp
+    source: 18.cpp
+  - name: sample.sh
+    source: 18.sh
