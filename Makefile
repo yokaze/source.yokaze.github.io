@@ -25,7 +25,7 @@ date:
 			printf $$(grep date: $$i | awk '{ print substr($$2, 0, 10) }'); \
 		fi; \
 		printf '  '; \
-		printf $$(echo $$i | awk '{ print substr($$0, 9) }'); \
+		printf '%-16s' "$$(echo $$i | awk '{ print substr($$0, 9) }')"; \
 		printf '  '; \
 		grep title: $$i | awk '{ print substr($$0, 8) }' | jq -r; \
 	done | sort | bat -
