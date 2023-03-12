@@ -92,9 +92,12 @@ func generatePage(file string, info *Info) error {
 }
 
 func main() {
+	cmd := exec.Command("zsh", "-c", `cat /System/Library/CoreServices/Setup\ Assistant.app/Contents/Resources/en.lproj/OSXSoftwareLicense.rtf | grep 'FOR macOS' | sed 's/.*\(FOR macOS [a-zA-Z]\)/\1/g' | awk '{print substr($3, 1, length($3) - 1)}'`)
+	output, _ := cmd.CombinedOutput()
+
 	var info Info
 	info.Date = time.Now().Format("2006-01-02")
-	info.Hardware = "M1 Mac (Monterey)"
+	info.Hardware = fmt.Sprintf("M1 Mac (%s)", strings.TrimSpace(string(output)))
 
 	files, err := filepath.Glob("./*/*/*.md")
 	if err != nil {
