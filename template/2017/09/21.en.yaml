@@ -3,8 +3,8 @@ commands:
   - command: clang sample.cpp -Wmacro-redefined
   - command: clang sample.cpp
   - command: clang sample.cpp -Wno-macro-redefined
-  - command: gcc-11 --version | head -n 1 | awk '{print $5}'
-  - command: gcc-11 sample.cpp
+  - command: gcc-12 --version | head -n 1 | awk '{print $5}'
+  - command: gcc-12 sample.cpp
 resources:
   - name: sample.cpp
     source: 21.cpp
